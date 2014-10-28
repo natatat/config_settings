@@ -3,12 +3,15 @@ echo "Logged in as $USER at $(hostname)"
 
 # note that when setting PATH=$PATH is called.  This is like A=A+B so we preserve the old path
 
+
 # for homebrew
 export PATH=/usr/local/bin:$PATH
 # for npm
 export PATH=/usr/local/share/npm/bin:$PATH
 # for exercism
 export PATH=~/bin:$PATH
+# for sublime
+export EDITOR='subl -w'
 
 # git completion (commented out in case you don't have these)
 # source ~/.git-completion.bash
@@ -16,11 +19,12 @@ export PATH=~/bin:$PATH
 
 # alias shortcuts
 alias dt='cd ~/Desktop'
-alias dbc='cd ~/Dropbox/Desktop/DBC'
-alias dev='cd ~/Dropbox/Desktop/DEV'
-alias ..='cd ..'
 alias ls='ls -Gh'
-
+alias dbc='cd ~/Dropbox/Desktop/DBC && ls'
+alias dev='cd ~/Dropbox/Desktop/DEV && ls'
+alias vusay='cd ~/Dropbox/Desktop/DEV/vusay && ls'
+alias ..='cd ..'
+alias gs='grunt server'
 # grep with color
 alias grep='grep --color=auto'
 
@@ -68,8 +72,16 @@ git_prompt ()
   fi
   echo " [$git_color$git_branch${c_reset}]"
 }
+
+# git auto-complete!
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # RVM scripts below
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Path for RVM
 PATH="$PATH:$HOME/.rvm/bin"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
