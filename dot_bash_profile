@@ -24,7 +24,11 @@ alias dbc='cd ~/Dropbox/Desktop/DBC && ls'
 alias dev='cd ~/Dropbox/Desktop/DEV && ls'
 alias vusay='cd ~/Dropbox/Desktop/DEV/vusay && ls'
 alias ..='cd ..'
+alias m='mongod --dbpath /usr/local/var/mongodb --fork --syslog'
+alias kan='killall node'
+alias kam='killall mongod'
 alias gs='grunt server'
+alias lint='grunt jslint'
 # grep with color
 alias grep='grep --color=auto'
 
